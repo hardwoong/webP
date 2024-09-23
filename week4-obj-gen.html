@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 생성</title>
+    <script>
+        function register() {this.nStudent++;}
+        function unregister() {this.nStudent--;}
+        function getStudentCount() {return this.nStudent;}
+
+        let myClass1 = new Object();
+        myClass1.korName = "웹프로그래밍";
+        myClass1.engName = "Web Programming";
+        myClass1.classCode = "V024003";
+        myClass1.nStudent = 0;
+
+        myClass1.register = register;
+        myClass1.unregister = unregister;
+        myClass1.getStudentCount = getStudentCount;
+        function Class(korName, engName, classCode, nStudent) {
+            this.korName = korName;
+            this.engName = engName;
+            this.classCode = classCode;
+            this.nStudent = 0;
+
+            this.register = function() {this.nStudent++;}
+            this.unregister = function() {this.nStudent--;}
+            this.withdraw = function() {return this.nStudent;}
+        }
+
+        let myClass2 = {
+            korName : "클라우드컴퓨팅",
+            engName : "Cloud Computing",
+            classCode : "V024003",
+            nStudent : 0,
+
+            register : function() {this.nStudent++;},
+            unregister : function() {this.nStudent--;},
+            getStudentCount : function() {return this.nStudent;}
+        };
+        
+    </script>
+</head>
+<body>
+    <script>
+        document.write("<h2>1. 직접 객체 만들기</h2>");
+        document.write("교과목 이름 : " + myClass1.korName + "<br>");
+        document.write("등록 학생 수 = " + myClass1.nStudent + "<br>");
+        myClass1.register();
+        document.write("after register, 등록 학생 수 = " + myClass1.nStudent + "<hr>");
+
+        document.write("<h2>2. 리터럴 표기법</h2>");
+        document.write("교과목 이름 = " + myClass2.korName + "<br>");
+        document.write("등록 학생 수 = " + myClass2.nStudent + "<br>");
+        myClass2.register();
+        document.write("after register, 등록 학생 수 = " + myClass2.nStudent + "<hr>");
+
+        document.write("<h2>3. Prototype</h2>");
+        let myClass3 = new Class("프로그래밍언어론", "Programming Language", "V024003", 0);
+        document.write("교과목 이름 = " + myClass3.korName + "<br>");
+        document.write("등록 학생 수 = " + myClass3.nStudent + "<br>");
+        myClass3.register();
+        document.write("after register, 등록 학생 수 = " + myClass3.nStudent);
+    </script>
+</body>
+</html>
