@@ -22,4 +22,12 @@
       <li>3주차 공부 내용 정리 추가</li>
     </ul>
   </li>
+  <li>Week 4
+    <ul>
+      <li>JavaScript 개요, 기초</li>
+      <li>함수</li>
+      <li>객체 개요</li>
+      <li>코어 객체</li>
+      <li>사용자 객체</li>
+  </li>
 </ul>
