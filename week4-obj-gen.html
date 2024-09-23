@@ -18,6 +18,18 @@
         myClass1.register = register;
         myClass1.unregister = unregister;
         myClass1.getStudentCount = getStudentCount;
+
+        let myClass2 = {
+            korName : "클라우드컴퓨팅",
+            engName : "Cloud Computing",
+            classCode : "V024004",
+            nStudent : 0,
+
+            register : function() {this.nStudent++;},
+            unregister : function() {this.nStudent--;},
+            getStudentCount : function() {return this.nStudent;}
+        };
+
         function Class(korName, engName, classCode, nStudent) {
             this.korName = korName;
             this.engName = engName;
@@ -28,17 +40,6 @@
             this.unregister = function() {this.nStudent--;}
             this.withdraw = function() {return this.nStudent;}
         }
-
-        let myClass2 = {
-            korName : "클라우드컴퓨팅",
-            engName : "Cloud Computing",
-            classCode : "V024003",
-            nStudent : 0,
-
-            register : function() {this.nStudent++;},
-            unregister : function() {this.nStudent--;},
-            getStudentCount : function() {return this.nStudent;}
-        };
         
     </script>
 </head>
@@ -57,7 +58,7 @@
         document.write("after register, 등록 학생 수 = " + myClass2.nStudent + "<hr>");
 
         document.write("<h2>3. Prototype</h2>");
-        let myClass3 = new Class("프로그래밍언어론", "Programming Language", "V024003", 0);
+        let myClass3 = new Class("프로그래밍언어론", "Programming Language", "V024005", 0);
         document.write("교과목 이름 = " + myClass3.korName + "<br>");
         document.write("등록 학생 수 = " + myClass3.nStudent + "<br>");
         myClass3.register();
