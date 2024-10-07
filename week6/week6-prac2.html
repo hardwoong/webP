@@ -7,9 +7,9 @@
     <script>
         function isEnter(e) {
             if (e.key == "Enter") {
-                let math = document.getElementById("math");
+                let exp = document.getElementById("exp");
                 let res = document.getElementById("res");
-                res.value = eval(math.value);
+                res.value = eval(exp.value);
             }
         }
     </script>
@@ -20,7 +20,7 @@
     <p>수식을 입력하고 &lt;Enter&gt;를 입력하세요.</p>
     <br>
     <form>
-        식 &nbsp; <input type="text" id="math" onkeydown="isEnter(event)"><br>
+        식 &nbsp; <input type="text" id="exp" onkeydown="isEnter(event)"><br>
         값 &nbsp; <input type="text" id="res">
     </form>
 </body>
