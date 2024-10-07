@@ -31,4 +31,19 @@
       <li>사용자 객체</li>
     </ul>
   </li>
+  <li>Week 5
+    <ul>
+      <li>DOM 개요</li>
+      <li>DOM 트리와 HTML 관계</li>
+      <li>DOM 객체 제어</li>
+      <li>동적 DOM 조작</li>
+    </ul>
+  </li>
+  <li>Week6
+    <ul>
+      <li>이벤트</li>
+      <li>이벤트 리스너</li>
+      <li>이벤트가 DOM 트리를 따라 흘러가는 경로</li>
+      <li>특정 이벤트(키, 마우스, 로딩 등)</li>
+  </li>
 </ul>
