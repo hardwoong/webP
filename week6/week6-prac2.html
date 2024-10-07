@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>onkeydown</title>
+    <title>실습문제 9-3</title>
     <script>
         function isEnter(e) {
             if (e.key == "Enter") {
@@ -20,7 +20,7 @@
     <p>수식을 입력하고 &lt;Enter&gt;를 입력하세요.</p>
     <br>
     <form>
-        식 &nbsp; <input type="text" id="math" onkeypress="isEnter(event)"><br>
+        식 &nbsp; <input type="text" id="math" onkeydown="isEnter(event)"><br>
         값 &nbsp; <input type="text" id="res">
     </form>
 </body>
