@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제9-6</title>
+    <script>
+        function wheel(e) {
+            let img = document.getElementById("img");
+            let curWidth = img.clientWidth;
+            let curHeight = img.clientHeight;
+            if(e.wheelDelta < 0) {
+                img.style.width = (curWidth * 1.05) + "px";
+                img.style.height = (curHeight * 1.05) + "px";
+            }
+            else {
+                img.style.width = (curWidth * 0.95) + "px";
+                img.style.height = (curHeight * 0.95) + "px";
+            }
+            e.preventDefault();
+        }
+    </script>
+</head>
+<body>
+    <h3>마우스 휠을 이용한 이미지 확대/축소</h3>
+    <hr>
+    <p>이미지 위에 휠을 위로 굴리면 이미지가 축소되고 아래로 굴리면 이미지가 확대됩니다.</p>
+    <img src="media/apple.png" alt="이미지 출력 위치" onmousewheel="wheel(event)" id="img" width="150px" height="150px">
+</body>
+</html>
