@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>div 태그에 시계 만들기</title>
+    <script>
+        let clock;
+        let timer = null;
+        function startClock() {
+            clock = document.getElementById("clock");
+            showTime();
+            timer = setInterval('showTime();', 1000);
+        }
+        function showTime() {
+            let time = new Date();
+            clock.innerHTML = time.toLocaleTimeString();
+        }
+        function stop_start_clock() {
+            if(timer) {
+                clock.style.color = "gray";
+                clearInterval(timer);
+                timer = null;
+            }
+            else if (timer == null) {
+                clock.style.color = "black";
+                timer = setInterval('showTime();', 1000);
+            }
+        }
+    </script>
+</head>
+<body onload="startClock();">
+    <h3>div 태그에 시계 만들기</h3>
+    <hr>
+    <div id="clock" onclick="stop_start_clock()"></div>
+</body>
+</html>
