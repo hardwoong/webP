@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>워커 태스크 만들기</title>
+</head>
+<body>
+    <h2>곱셈하기</h2>
+    <hr>
+    <input type="text" id="exp1">
+    &nbsp;x&nbsp;
+    <input type="text" id="exp2">
+    <input type="button" value="곱하기" onclick="mul()">
+    <input type="text" id="res">
+    <script>
+        let addWorker = new Worker("mul.js");
+
+        addWorker.onmessage = function(e) {
+            document.getElementById("res").value = e.data;
+        }
+
+        function mul() {
+            let exp1 = document.getElementById("exp1").value;
+            let exp2 = document.getElementById("exp2").value;
+            addWorker.postMessage({ exp1: exp1, exp2: exp2 });
+        }
+    </script>
+</body>
+</html>
